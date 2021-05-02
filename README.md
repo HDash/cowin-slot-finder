@@ -17,6 +17,10 @@ py "(location)\find_slots.py"
 
 ## Linux
 Well, you already know.	
+
+# Contribution
+Feel free to pull requests.
+I'm very new to coding and git so I'm absolutely open to feedback and sugggestion. :)
  
 # Credits
 [bhattbhavesh91](https://github.com/bhattbhavesh91) - [Backend](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability/blob/main/cowin-api-availability.ipynb)
