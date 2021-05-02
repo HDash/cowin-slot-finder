@@ -12,7 +12,7 @@ Simple script to find available slots for your age and state/district using Cowi
 ```cmd
 py -m pip install requests
 py -m pip install pandas
-py (location)\find_slots.py
+py "(location)\find_slots.py"
 ```
 
 ## Linux
