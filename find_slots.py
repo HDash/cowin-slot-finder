@@ -11,11 +11,11 @@ from time import sleep
 method = 0
 
 # Set state code or district code 0 to query state and district code list
-state_code = 9
+state_code = 0
 district_code = 0
 
 # Set your age
-age = 19
+age = 50
 
 
 ## Optional Variables
@@ -107,5 +107,5 @@ if method==0:
         print("\n", i, dict[i], end="")
         checkDistrict(i)
 
-print("SEARCH COMPLETE.")
+print("\nSEARCH COMPLETE.")
 sleep(10000)
