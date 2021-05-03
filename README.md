@@ -1,7 +1,7 @@
 # (Yet Another) Cowin Slot Finder - Python Edition
 Simple script to find available slots for your age and state/district using Cowin API.
 
-**How is it differnet from others?**
+**How is it differnet from others?**  
 This script can search through the entire state and organize the results as per district and date. Moreover, it only shows centres with available slots (prevents clutter).
 
 ## Screenshot
