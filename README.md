@@ -1,7 +1,13 @@
-# Cowin Slot Finder - Python Edition
+# (Yet Another) Cowin Slot Finder - Python Edition
 Simple script to find available slots for your age and state/district using Cowin API.
+
+**How is it differnet from others?**
+This script can search through the entire state and organize the results as per district and date. Moreover, it only shows centres with available slots (prevents clutter).
+
+## Screenshot
+![Searching entire Delhi](https://i.imgur.com/XfdxlW0.png "Optional title")
  
-# INSTRUCTIONS
+# Instructions
 1. Download find_slots.py, or clone repo.
 2. Edit variables in the said file.
 3. Run, using the instructions below.
