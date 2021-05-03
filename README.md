@@ -1,11 +1,13 @@
 # (Yet Another) Cowin Slot Finder - Python Edition
 Simple script to find available slots for your age and state/district using Cowin API.
 
+[Cowin](cowin.gov.in) is the portal for pan-India Covid-19 vaccination drive.
+
 **How is it differnet from others?**  
 This script can search through the entire state and organize the results as per district and date. Moreover, it only shows centres with available slots (prevents clutter).
 
 ## Screenshot
-![Searching entire Delhi](https://i.imgur.com/XfdxlW0.png "Optional title")
+![Searching entire Delhi](https://i.imgur.com/XfdxlW0.png "Searching entire Delhi")
  
 # Instructions
 1. Download find_slots.py, or clone repo.
