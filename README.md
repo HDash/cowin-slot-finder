@@ -1,5 +1,5 @@
 # (Yet Another) Cowin Slot Finder - Python Edition
-Simple script to find available slots for your age and state/district using Cowin API.
+Simple script to find available slots for your age and state/district and pin using Cowin API.
 
 [Cowin](cowin.gov.in) is the portal for pan-India Covid-19 vaccination drive.
 
