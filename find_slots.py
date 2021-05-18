@@ -57,7 +57,7 @@ else:
 base = datetime.datetime.today()
 date_list = [base + datetime.timedelta(days=x) for x in range(numdays)]
 date_str = [x.strftime("%d-%m-%Y") for x in date_list]
-print(date_str)
+# print(date_str)
 def checkDistrict(DIST_ID):
     global print_detailed
     global age
