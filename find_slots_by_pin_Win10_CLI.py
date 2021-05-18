@@ -19,6 +19,18 @@ Pin_Code = int(input("Enter a valid Pin: "))
 
 # Set your age
 age = int(input("Enter Your Age: "))
+vaccineshot = ""
+while True:
+    b= int(input("****Dose Details****\n1. Enter 1 for first dose avilability \n2. Enter 2 for 2nd Dose avilability\n --->"))
+    if b == 1:
+        vaccineshot = "available_capacity_dose1"
+        break
+    elif b == 2:
+        vaccineshot = "available_capacity_dose2"
+        break
+    else:
+        print("invalid input. Please try again...")
+        continue
 
 
 ## Optional Variables
@@ -56,22 +68,22 @@ def checkSlot(pin):
             resp_json = response.json()
             if resp_json["sessions"]:
                     for session in resp_json["sessions"]:
-                        if (session["min_age_limit"] == ageCalculator(age)) and (session["available_capacity"] > 0):
+                        if (session["min_age_limit"] == ageCalculator(age)) and (session[f"{vaccineshot}"] > 0):
                             slots_age=1
                             none_found=0
                             print()
                             print("\t", INP_DATE)
                             print("\t", session["name"])
                             print("\t Pincode:", session["pincode"])
-                            print("\t Available Capacity: ", session["available_capacity"])
+                            print("\t Available Capacity: ", session[f"{vaccineshot}"])
                             if(session["vaccine"] != ''):
                                 print("\t Vaccine: ", session["vaccine"])
                             print("\t Paid: ", session["fee_type"])
                             with open(f"log_of_age-{age} pin- {pin}.log","a") as f:
-                                f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {session["name"]} Slots - {session["available_capacity"]} {session["vaccine"]}\n""")
+                                f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {session["name"]} Slots - {session[f"{vaccineshot}"]} {vaccineshot} {session["vaccine"]}\n""")
                             try:
                                 n = ToastNotifier()
-                                n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} at- {session["name"]} slots - {session["available_capacity"]} pin-{session["pincode"]}\n {session["vaccine"]} {session["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
+                                n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} at- {session["name"]} slots - {session[f"{vaccineshot}"]} pin-{session["pincode"]}\n {session["vaccine"]} {session["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
                             except exception as e:
                                 print(e)
         else:

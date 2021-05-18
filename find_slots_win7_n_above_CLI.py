@@ -848,6 +848,7 @@ dist_deatails = {
  138 : 'Daman',
  139 : 'Diu',
 }
+vaccineshot = ""
 def showDistricts():
     scode = int(input("Enter your state code: "))
     if scode in districts.keys():
@@ -875,6 +876,14 @@ while True:
         state_code = int(input("Enter state code: "))
         district_code = int(input("Enter Dist code: "))
         if state_code in districts.keys() and district_code in districts[state_code]:
+            b= int(input("****Dose Details****\n1. Enter 1 for first dose avilability \n2. Enter 2 for 2nd Dose avilability\n --->"))
+            if b == 1:
+                vaccineshot = "available_capacity_dose1"
+            elif b == 2:
+                vaccineshot = "available_capacity_dose2"
+            else:
+                print("invalid input. Please try again...")
+                continue
             break
         else:
             print("Inavalid codes please try agin.")
@@ -922,19 +931,19 @@ def checkDistrict(DIST_ID):
             if resp_json["centers"]:
                     for center in resp_json["centers"]:
                         for session in center["sessions"]:
-                            if (session["min_age_limit"] == ageCalculator(age)) and (session["available_capacity_dose1"] > 0):
+                            if (session["min_age_limit"] == ageCalculator(age)) and (session[f"{vaccineshot}"] > 0):
                                 slots_age=1
                                 none_found=0
                                 print()
                                 print("\t", INP_DATE)
                                 print("\t", center["name"])
                                 print("\t Pincode:", center["pincode"])
-                                print("\t Available Capacity: ", session["available_capacity_dose1"])
+                                print("\t Available Capacity: ", session[f"{vaccineshot}"])
                                 if(session["vaccine"] != ''):
                                     print("\t Vaccine: ", session["vaccine"])
                                 print("\t Fees: ", center["fee_type"])
                                 with open(f"log_of_age-{age}.log","a") as f:
-                                    f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {center["name"]} Slots - {session["available_capacity"]} {session["vaccine"]}\n""")
+                                    f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {center["name"]} Slots - {session[f"{vaccineshot}"]} {vaccineshot} {session["vaccine"]}\n""")
 
         else:
             print("Respose is not getting through")
