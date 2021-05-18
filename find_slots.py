@@ -3,19 +3,24 @@ import datetime
 import json
 import pandas as pd
 from time import sleep
+from fake_useragent import UserAgent
+from win10toast import ToastNotifier
+
+temp_user_agent = UserAgent()
+browser_header = {'User-Agent': temp_user_agent.random}
 
 ### Variables
 
 ## Important Variables
 # 0 = Search entire state, 1 = Search only a single district
-method = 0
+method = 1
 
 # Set state code or district code 0 to query state and district code list
 state_code = 0
 district_code = 0
 
 # Set your age
-age = 50
+age = 0
 
 
 ## Optional Variables
@@ -23,13 +28,13 @@ age = 50
 print_detailed = 0
 
 # Number of days to check in advance
-numdays = 20
+numdays = 4
 
 # Check variables
 def printCodes():
     for state_code in range(1,40):
         print("State code: ", state_code)
-        response = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}".format(state_code))
+        response = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}".format(state_code),  headers=browser_header)
         json_data = json.loads(response.text)
         for i in json_data["districts"]:
             print(i["district_id"],'\t', i["district_name"])
@@ -60,7 +65,7 @@ def checkDistrict(DIST_ID):
     global age
     none_found = 1
     for INP_DATE in date_str:
-        URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(DIST_ID, INP_DATE)
+        URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(DIST_ID, INP_DATE,  headers=browser_header)
         response = requests.get(URL)
         if response.ok:
             slots_age = 0
@@ -80,6 +85,11 @@ def checkDistrict(DIST_ID):
                                 if(session["vaccine"] != ''):
                                     print("\t Vaccine: ", session["vaccine"])
                                 print("\t Paid: ", center["fee_type"])
+                                try:
+                                    n = ToastNotifier()
+                                    n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} at- {center["name"]} slots - {session["available_capacity"]}\n {session["vaccine"]} fees:{center["fee_type"]}""", duration = 10, icon_path ="./icon.ico")
+                                except:
+                                    pass
                                 
 
         if print_detailed==1:
@@ -90,7 +100,7 @@ def checkDistrict(DIST_ID):
         print("\t-\tNONE.")
 
 def createDistrictDictionary(STATE_ID):
-    response = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}".format(STATE_ID))
+    response = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}".format(STATE_ID),  headers=browser_header)
     json_data = json.loads(response.text)
     dict = {}
     for i in json_data["districts"]:
