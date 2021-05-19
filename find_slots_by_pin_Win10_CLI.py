@@ -84,8 +84,8 @@ def checkSlot(pin):
                             try:
                                 n = ToastNotifier()
                                 n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} at- {session["name"]} slots - {session[f"{vaccineshot}"]} pin-{session["pincode"]}\n {session["vaccine"]} {session["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
-                            except exception as e:
-                                print(e)
+                            except:
+                                pass
         else:
             print("Respose is not getting through or invalid pin")
         if print_detailed==1:

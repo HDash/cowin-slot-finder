@@ -950,8 +950,8 @@ def checkDistrict(DIST_ID):
                                     balloon_tip("Vaccine Available!!!",f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""")
                                     # n = ToastNotifier()
                                     # n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
-                                except exception as e:
-                                    print(e)
+                                except:
+                                    pass
 
         else:
             print("Respose is not getting through")
