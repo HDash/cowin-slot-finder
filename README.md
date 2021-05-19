@@ -75,4 +75,4 @@ Share your feedback and suggestions.
 
 # License
 
-MIT
+[MIT](https://raw.githubusercontent.com/HDash/cowin-slot-finder/main/LICENSE)
