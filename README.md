@@ -62,8 +62,8 @@ python3 <script you want to run>
 ```
 
 # Contribution
-Feel free to pull requests.
-Share your feedback and suggestions.
+Feel free to pull requests.  
+Share your feedback, suggestions and bugs. :)
 
 # Scopes of Developments
 - GUI Application
@@ -71,8 +71,7 @@ Share your feedback and suggestions.
  
 # Credits
 > [bhattbhavesh91](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability/blob/main/cowin-api-availability.ipynb) - json Parsing and request script for cowin API  
-> [SridharJena](https://github.com/sridharjena97) - CLI script adaptation for the script
+> [SridharJena](https://github.com/sridharjena97) - CLI adaptation for the script, API request fix
 
 # License
-
 [MIT](https://raw.githubusercontent.com/HDash/cowin-slot-finder/main/LICENSE)
