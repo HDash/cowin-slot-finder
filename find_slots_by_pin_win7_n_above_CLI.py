@@ -3,7 +3,7 @@ import requests
 import datetime
 from time import sleep
 from fake_useragent import UserAgent
-from ballontip import WindowsBalloonTip
+from win10toast import ToastNotifier
 
 temp_user_agent = UserAgent()
 browser_header = {'User-Agent': temp_user_agent.random}
@@ -85,9 +85,8 @@ def checkSlot(pin):
                             with open(f"log_of_age-{age} pin- {pin}.log","a") as f:
                                 f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {session["name"]} Slots - {session[f"{vaccineshot}"]} {session["vaccine"]}\n""")
                             try:
-                                    balloon_tip("Vaccine Available!!!",f"""On -{INP_DATE} at- {session["name"]} slots - {session[f"{vaccineshot}"]} pin-{session["pincode"]}\n {session["vaccine"]} {session["fee_type"]}""")
-                                    # n = ToastNotifier()
-                                    # n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
+                                n = ToastNotifier()
+                                n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} At- {session["name"]} Slots - {session[f"{vaccineshot}"]} pin-{session["pincode"]}\n {session["vaccine"]} {session["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
                             except:
                                 pass
         else:
