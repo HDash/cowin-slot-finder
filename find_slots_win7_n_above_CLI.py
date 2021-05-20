@@ -3,7 +3,7 @@ import requests
 import datetime
 from time import sleep
 from fake_useragent import UserAgent
-from ballontip import WindowsBalloonTip
+from win10toast import ToastNotifier
 
 temp_user_agent = UserAgent()
 browser_header = {'User-Agent': temp_user_agent.random}
@@ -903,8 +903,7 @@ print_detailed = 0
 
 # Number of days to check in advance
 numdays = 4
-def balloon_tip(title, msg):
-    w=WindowsBalloonTip(title, msg)
+
 # Check variables
 def ageCalculator(age):
     if age<45 and age>=18:
@@ -947,9 +946,8 @@ def checkDistrict(DIST_ID):
                                 with open(f"log_of_age-{age}.log","a") as f:
                                     f.write(f"""{datetime.datetime.now()}    Date-{INP_DATE} Center- {center["name"]} Slots - {session[f"{vaccineshot}"]} {vaccineshot} {session["vaccine"]}\n""")
                                 try:
-                                    balloon_tip("Vaccine Available!!!",f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""")
-                                    # n = ToastNotifier()
-                                    # n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
+                                    n = ToastNotifier()
+                                    n.show_toast("Vaccine Available!!!", f"""On -{INP_DATE} At- {center["name"]} Slots - {session[f"{vaccineshot}"]} pin-{center["pincode"]}\n {session["vaccine"]} {center["fee_type"]}""", duration = 5, icon_path ="./icon.ico",threaded=False)
                                 except:
                                     pass
 
