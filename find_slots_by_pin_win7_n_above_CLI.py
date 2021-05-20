@@ -46,8 +46,6 @@ base = datetime.datetime.today()
 date_list = [base + datetime.timedelta(days=x) for x in range(numdays)]
 date_str = [x.strftime("%d-%m-%Y") for x in date_list]
 # print(date_str)
-def balloon_tip(title, msg):
-    w=WindowsBalloonTip(title, msg)
 
 def ageCalculator(age):
     if age<45 and age>=18:

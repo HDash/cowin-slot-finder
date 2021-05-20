@@ -903,8 +903,7 @@ print_detailed = 0
 
 # Number of days to check in advance
 numdays = 4
-def balloon_tip(title, msg):
-    w=WindowsBalloonTip(title, msg)
+
 # Check variables
 def ageCalculator(age):
     if age<45 and age>=18:
