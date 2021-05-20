@@ -70,12 +70,9 @@ Share your feedback and suggestions.
 - Mobile Application
  
 # Credits
-> [bhattbhavesh91](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability/blob/main/cowin-api-availability.ipynb) for json Parsing and request script 
-> [SridharJena](https://github.com/sridharjena97) For developing CLI applications
-![GitHub](https://icons.iconarchive.com/icons/danleech/simple/128/github-icon.png)
+> [bhattbhavesh91](https://github.com/bhattbhavesh91/cowin-vaccination-slot-availability/blob/main/cowin-api-availability.ipynb) - json Parsing and request script for cowin API  
+> [SridharJena](https://github.com/sridharjena97) - CLI script adaptation for the script
 
 # License
 
-MIT
-
-**Free Software, Hell Yeah!**
+[MIT](https://raw.githubusercontent.com/HDash/cowin-slot-finder/main/LICENSE)
