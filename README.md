@@ -54,11 +54,8 @@ or
 py -m pip install -r requirements.txt
 ```
 ## Linux
-```cmd
-sudo apt-get install python3
-git clone https://github.com/HDash/cowin-slot-finder.git
-pip install -r requirements.txt
-python3 <script you want to run>
+```
+TODO : Bring proper support to Linux
 ```
 
 # Contribution
