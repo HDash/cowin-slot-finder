@@ -14,7 +14,7 @@ def install(packages):
   for package in packages:
     pip.main(['install', package])
     
-    if _name_ == '_main':
+    if _name_ == '_main_':
       
       from sys import platform
       
