@@ -25,7 +25,7 @@ This script can search through the entire state and organize the results as per 
 # Instructions
 ### Users with Windows OS
 - Download an exe file from the link as per your requirement [Download Releases](https://github.com/sridharjena97/cowin-slot-finder/releases/tag/1.0)
-- Doubble click on application to start
+- Double click on application to start
 - Follow the app instructions. Learn More about usage[Here](https://sridhwork.blogspot.com/2021/05/cowin-slot-booking-software.html)
 - Tip: If you download the icon along with the executable and place it in same file. Notification will look more beautiful.
 ### Users with python 3.0 or grater on any operating system
@@ -54,15 +54,12 @@ or
 py -m pip install -r requirements.txt
 ```
 ## Linux
-```cmd
-sudo apt-get install python3
-git clone https://github.com/HDash/cowin-slot-finder.git
-pip install -r requirements.txt
-python3 <script you want to run>
+```
+TODO : Bring proper support to Linux
 ```
 
 # Contribution
-Feel free to pull requests.  
+Feel free to submit pull requests.  
 Share your feedback, suggestions and bugs. :)
 
 # Scopes of Developments
